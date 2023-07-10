@@ -13,7 +13,7 @@ static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "monospace:size=10" };
+static const char *fonts[]          = { "monospace:size=12" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -74,12 +74,14 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *filecmd[]  = { "thunar", NULL };
 static const char *browsercmd[]  = { "google-chrome-stable", NULL };
 static const char *roficmd[]  = { "rofi", "-show","drun", NULL };
+static const char *kittycmd[] = {"sh", "-c", "LIBGL_ALWAYS_SOFTWARE=true GALLIUM_DRIVER=llvmpipe kitty", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_v,      spawn,          {.v = (char *[]){"vncviewer", "192.168.1.1", NULL } } },
 	{ MODKEY,                       XK_q,      spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_Return, spawn,          {.v = kittycmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = filecmd } },
 	{ MODKEY,                       XK_g,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
