@@ -72,7 +72,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *filecmd[]  = { "thunar", NULL };
-static const char *browsercmd[]  = { "brave-browser", NULL };
+static const char *browsercmd[]  = { "google-chrome-stable", NULL };
 static const char *roficmd[]  = { "rofi", "-show","drun", NULL };
 static const char *stcmd[] = {"st", NULL};
 
@@ -98,6 +98,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_w,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_s,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_a,      setlayout,      {.v = &layouts[2]} },
+    { MODKEY,                       XK_f,      fullscreen,     {0} },
 	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
